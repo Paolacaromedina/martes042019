@@ -27,6 +27,14 @@ class controller{
      })
 
  }
+  postUsers(req, res){
+      let users = req.body.users;
+      User.create( users, (err, result)=>{
+          if(err)throw err;
+          res.send({newUsers:result})
+      } )
+
+  }
 }
 
 
