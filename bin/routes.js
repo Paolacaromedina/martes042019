@@ -22,6 +22,26 @@ app.post("/users", (req, res)=>{
     //console.log(req.body);
     controller.postUsers(req, res);
 
+
 })
+
+
+//Traer un usuario por su id
+app.get("/usuario/:id", function(req, res) {
+  let { id } = req.params;
+  controller.getUser(id, res);
+});
+
+//Traer un usuario por su país
+app.get("/usuario/:paises", function(req, res) {
+  let { id } = req.params;
+  controller.getUser(paises, res);
+});
+
+
+
+
+
+
 
 exports.app = app;
