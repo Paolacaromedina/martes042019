@@ -27,21 +27,31 @@ app.post("/users", (req, res)=>{
 
 
 //Traer un usuario por su id
-app.get("/usuario/:id", function(req, res) {
-  let { id } = req.params;
-  controller.getUser(id, res);
+app.get("/usuarios/:id_personas", function(req, res) {
+  console.log(req.params)
+ res.send("ok")
 });
 
 //Traer un usuario por su país
-app.get("/usuario/:paises", function(req, res) {
-  let { id } = req.params;
-  controller.getUser(paises, res);
+app.get("/usuarios/:id_usuario/paises", function(req, res) {
+  console.log(req.params)
+ res.send("ok")
 });
 
+app.get("/usuarios/:id_usuario/recetas/", function(req, res) {
+  console.log(req.params)
+ res.send("ok")
+});
 
+app.get("/comentarios/:id_usuario/recetas/", function(req, res) {
+  console.log(req.params)
+ res.send("ok")
+});
 
-
-
+app.get("/personas/:id_usuario/", function(req, res) {
+  console.log(req.params)
+ res.send("ok")
+});
 
 
 exports.app = app;
