@@ -18,6 +18,11 @@ app.get("/users", (req, res)=>{
    res.send(users);*/
    controller.getUsers(res);
 })
+
+app.get("/recetas", (req, res)=>{
+
+   controller.getRecetas(res);
+})
 app.post("/users", (req, res)=>{
     //console.log(req.body);
     controller.postUsers(req, res);

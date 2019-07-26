@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("./models/User");
-
+const Recetas = require("./models/Recetas")
 class controller{
     constructor(){
         this.connect();
@@ -27,6 +27,17 @@ class controller{
      })
 
  }
+
+ getRecetas(res){
+     Recetas.find({}, (err, Recetas)=>{
+         if(err) throw err;
+
+         res.send( Recetas );
+     })
+
+ }
+
+
   postUsers(req, res){
       let users = req.body.users;
       User.create( users, (err, result)=>{
