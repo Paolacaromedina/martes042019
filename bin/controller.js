@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const User = require("./models/User");
 const Recetas = require("./models/Recetas")
+const Personas = require("./models/Personas")
+const Comentarios = require("./models/Comentarios")
+const Frutas = require("./models/Frutas")
+const Paises = require("./models/Paises")
 class controller{
     constructor(){
         this.connect();
@@ -33,6 +37,42 @@ class controller{
          if(err) throw err;
 
          res.send( Recetas );
+     })
+
+ }
+
+ getComentarios(res){
+     Comentarios.find({}, (err, Comentarios)=>{
+         if(err) throw err;
+
+         res.send( Comentarios );
+     })
+
+ }
+
+ getFrutas(res){
+     Frutas.find({}, (err, Frutas)=>{
+         if(err) throw err;
+
+         res.send( Frutas );
+     })
+
+ }
+
+getPaises(res){
+     Paises.find({}, (err, Paises)=>{
+         if(err) throw err;
+
+         res.send( Paises );
+     })
+
+ }
+
+getPersonas(res){
+     Personas.find({}, (err, Personas)=>{
+         if(err) throw err;
+
+         res.send( Personas );
      })
 
  }

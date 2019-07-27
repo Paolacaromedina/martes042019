@@ -23,6 +23,28 @@ app.get("/recetas", (req, res)=>{
 
    controller.getRecetas(res);
 })
+
+app.get("/comentarios", (req, res)=>{
+
+   controller.getComentarios(res);
+})
+
+app.get("/frutas", (req, res)=>{
+
+   controller.getFrutas(res);
+})
+
+app.get("/paises", (req, res)=>{
+
+   controller.getPaises(res);
+})
+
+app.get("/personas", (req, res)=>{
+
+   controller.getPersonas(res);
+})
+
+ 
 app.post("/users", (req, res)=>{
     //console.log(req.body);
     controller.postUsers(req, res);
