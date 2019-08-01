@@ -86,6 +86,38 @@ getPersonas(res){
       } )
 
   }
+  postRecetas(req, res){
+      let recetas = req.body.recetas;
+      Recetas.create( recetas, (err, result)=>{
+          if(err)throw err;
+          res.send({newReceta:result})
+      } )
+
+  }
+  postpaises(req, res){
+      let paises = req.body.paises;
+      Paises.create( paises, (err, result)=>{
+          if(err)throw err;
+          res.send({newpais: result})
+      } )
+
+  }
+  postcomentarios(req, res){
+      let comentarios = req.body.comentarios;
+      Comentarios.create( comentarios, (err, result)=>{
+          if(err)throw err;
+          res.send({newcomentario: result})
+      } )
+
+  }
+  deleteUsers(req, res){
+      let users = req.body.users;
+      User.Delete( users, (err, result)=>{
+          if(err)throw err;
+          res.send({Usuario_Eliminado: result})
+      } )
+
+  }
 }
 
 

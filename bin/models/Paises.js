@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PaisesSchema = new Schema({
-    paises: String,
+    nombre: String,
+    ubicacion: String,
+    continente: String
 
 
 

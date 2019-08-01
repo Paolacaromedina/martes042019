@@ -44,13 +44,34 @@ app.get("/personas", (req, res)=>{
    controller.getPersonas(res);
 })
 
- 
+
 app.post("/users", (req, res)=>{
     //console.log(req.body);
     controller.postUsers(req, res);
 
 
 })
+
+app.post("/recetas", (req, res)=>{
+    //console.log(req.body);
+    controller.postRecetas(req, res);
+
+
+})
+app.post("/paises", (req, res)=>{
+    //console.log(req.body);
+    controller.postpaises (req, res);
+
+
+})
+
+app.post("/comentarios", (req, res)=>{
+    //console.log(req.body);
+    controller.postcomentarios (req, res);
+
+
+})
+
 
 
 //Traer un usuario por su id
