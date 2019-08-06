@@ -1,7 +1,7 @@
-const { app } =  require("./bin/routes");
+const { app } = require("./bin/routes");
 
-app.listen( 3000, ()=>{
+app.listen(8080, () => {
 
     console.log("servidor on")
-} )
+})
 

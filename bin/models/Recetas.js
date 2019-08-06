@@ -2,7 +2,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const RecetasSchema = new Schema({
-    recetas: String
+    receta: String,
+    imagen: String,
+    id_usuarios: {
+        type: Schema.Types.ObjectId,
+        ref: "Users"
+    },
+    id_frutas: {
+        type: Schema.Types.ObjectId,
+        ref: "Frutas"
+
+    }
 
 });
 

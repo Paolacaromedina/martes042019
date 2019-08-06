@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PersonasSchema = new Schema({
-    nombre1: string,
-    nombre2: string,
-    apellido1: string,
-    apellido2: string,
-    telefono: string,
-    direccion: string,
-    sexo: string,
+    nombre1: String,
+    nombre2: String,
+    apellido1: String,
+    apellido2: String,
+    telefono: String,
+    direccion: String,
+    sexo: String,
     id_paises: {
         type: Schema.Types.ObjectId,
         ref: "Paises"
@@ -17,11 +17,6 @@ const PersonasSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    id_usuarios:
-
-
-
-
 });
 
 var Personas = mongoose.model("Personas", PersonasSchema);

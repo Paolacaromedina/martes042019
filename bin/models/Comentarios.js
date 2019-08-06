@@ -2,7 +2,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ComentariosSchema = new Schema({
-    comentarios: String
+    comentario: String,
+    fecha: String,
+    id_recetas: {
+        type: Schema.Types.ObjectId,
+        ref: "Recetas"
+    },
+    id_usuarios: {
+
+    }
 
 });
 
