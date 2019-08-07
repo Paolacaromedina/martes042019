@@ -1,73 +1,78 @@
 const express = require("express");
 const app = express();
-const {controller} = require("./controller")
+const { controller } = require("./controller")
 const bodyParser = require("body-parser");
 
-app.use( bodyParser.json() );
-app.get("/", (req, res)=>{
-res.send("HOLA");
+app.use(bodyParser.json());
+app.get("/", (req, res) => {
+    res.send("HOLA");
 })
 
-app.get("/users", (req, res)=>{
- /*let users = [
-     {name:"alma", password: "njkdhkjh" },
-     {name:"beatriz", password: "njdt" },
-     {name:"oswaldo", password: "nfgfhh" },
-]
+app.get("/users", (req, res) => {
+    /*let users = [
+        {name:"alma", password: "njkdhkjh" },
+        {name:"beatriz", password: "njdt" },
+        {name:"oswaldo", password: "nfgfhh" },
+   ]
 
-   res.send(users);*/
-   controller.getUsers(res);
+      res.send(users);*/
+    controller.getUsers(res);
 })
 
-app.get("/recetas", (req, res)=>{
+app.get("/recetas", (req, res) => {
 
-   controller.getRecetas(res);
+    controller.getRecetas(res);
 })
 
-app.get("/comentarios", (req, res)=>{
+app.get("/comentarios", (req, res) => {
 
-   controller.getComentarios(res);
+    controller.getComentarios(res);
 })
 
-app.get("/frutas", (req, res)=>{
+app.get("/frutas", (req, res) => {
 
-   controller.getFrutas(res);
+    controller.getFrutas(res);
 })
 
-app.get("/paises", (req, res)=>{
+app.get("/paises", (req, res) => {
 
-   controller.getPaises(res);
+    controller.getPaises(res);
 })
 
-app.get("/personas", (req, res)=>{
+app.get("/personas", (req, res) => {
 
-   controller.getPersonas(res);
+    controller.getPersonas(res);
+})
+
+app.delete("/users/:id", function(req, res) {
+    let { id } = req.params;
+    controller.eliminarusuario(id, res);
 })
 
 
-app.post("/users", (req, res)=>{
+app.post("/users", (req, res) => {
     //console.log(req.body);
     controller.postUsers(req, res);
 
 
 })
 
-app.post("/recetas", (req, res)=>{
+app.post("/recetas", (req, res) => {
     //console.log(req.body);
     controller.postRecetas(req, res);
 
 
 })
-app.post("/paises", (req, res)=>{
+app.post("/paises", (req, res) => {
     //console.log(req.body);
-    controller.postpaises (req, res);
+    controller.postpaises(req, res);
 
 
 })
 
-app.post("/comentarios", (req, res)=>{
+app.post("/comentarios", (req, res) => {
     //console.log(req.body);
-    controller.postcomentarios (req, res);
+    controller.postcomentarios(req, res);
 
 
 })
@@ -75,31 +80,39 @@ app.post("/comentarios", (req, res)=>{
 
 
 //Traer un usuario por su id
-app.get("/usuarios/:id_personas", function(req, res) {
-  console.log(req.params)
- res.send("ok")
+app.get("/users/:id", function(req, res) {
+    let { id } = req.params;
+    controller.traerusuarioporid(id, res);
 });
+
 
 //Traer un usuario por su país
 app.get("/usuarios/:id_usuario/paises", function(req, res) {
-  console.log(req.params)
- res.send("ok")
+    console.log(req.params)
+    res.send("ok")
+});
+
+app.put("/users/:id", function(req, res) {
+    let usuario = req.body.usuario;
+    usuario.id = req.params.id;
+    controller.actualizarusuarioporid(usuario, res);
 });
 
 app.get("/usuarios/:id_usuario/recetas/", function(req, res) {
-  console.log(req.params)
- res.send("ok")
+    console.log(req.params)
+    res.send("ok")
 });
 
 app.get("/comentarios/:id_usuario/recetas/", function(req, res) {
-  console.log(req.params)
- res.send("ok")
+    console.log(req.params)
+    res.send("ok")
 });
 
 app.get("/personas/:id_usuario/", function(req, res) {
-  console.log(req.params)
- res.send("ok")
+    console.log(req.params)
+    res.send("ok")
 });
+//rutas para comentarios
 
 
 exports.app = app;
