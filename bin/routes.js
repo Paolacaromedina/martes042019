@@ -116,6 +116,18 @@ app.get("/personas/:id_usuario/", function(req, res) {
 app.get("/cometarios", (req, res) => {
     controller.traerusuarios(res);
 })
+app.get("/users/:id_users/recetas/:id_recetas", (req, res) => {
+    let { id_users, id_recetas } = req.params;
+    controller.getUsuariorecetas(id_users, id_recetas, res);
+})
+app.get("/personas/:id_personas/paises/:id_paises/users/:id_users", (req, res) => {
+    let { id_users, id_paises, id_personas } = req.params;
+    controller.getUsuarios_y_sus_paises(id_users, id_paises, id_personas, res);
+})
+app.get("/comentarios/:id_comentario/recetas/:id_recetas", (req, res) => {
+    let { id_comentario, id_recetas } = req.params;
+    controller.comentariosdelareceta(id_comentario, id_recetas, res);
+})
 
 
 exports.app = app;

@@ -152,6 +152,68 @@ class controller {
                 if (err) throw err;
             });
     }
+    getUsuariorecetas(id_users, id_recetas, res) {
+        Recetas.find({ _id: id_recetas, id_usuarios: id_users })
+            .populate({
+                path: "id_usuarios",
+                select: "nickname password picture",
+                populate: {
+                    path: "id_usuarios",
+                    select: "nickname"
+                }
+            })
+            .exec(function(err, usuarioreceta) {
+                if (err) throw err;
+                res.send({ estado: 200, usuario_y_receta: usuarioreceta });
+            });
+    }
+    getUsuarios_y_sus_paises(id_users, id_paises, id_personas, res) {
+        Personas.find({ _id: id_personas, id_usuarios: id_users, id_paises: id_paises })
+            .populate({
+                path: "id_usuarios",
+                select: "nickname password picture",
+                populate: {
+                    path: "id_usuarios",
+                    select: "nickname"
+                }
+            })
+            .populate({
+                path: "id_paises",
+                select: "nombre imagen",
+                populate: {
+                    path: "id_paises",
+                    select: "nickname"
+                }
+            })
+            .exec(function(err, usuariopais) {
+                if (err) throw err;
+                res.send({ estado: 200, usuario_y_pais: usuariopais });
+            });
+    }
+    comentariosdelareceta(id_comentario, id_recetas, res) {
+        Comentarios.find({ _id: id_comentario, id_recetas: id_recetas })
+            .populate({
+                path: "id_comentario",
+                select: "comentario",
+                populate: {
+                    path: "id_comentario",
+                    select: "comentario"
+                }
+            })
+            .populate({
+                path: "id_recetas",
+                select: "receta imagen",
+                populate: {
+                    path: "id_recetas",
+                    select: "receta"
+                }
+            })
+
+            .exec(function(err, cometariodereceta) {
+                if (err) throw err;
+                res.send({ estado: 200, receta_y_comentario: cometariodereceta });
+            });
+    }
 }
 
 

@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 const RecetasSchema = new Schema({
     receta: String,
     imagen: String,
-    id_usuarios: {
+    id_usuarios: [{
         type: Schema.Types.ObjectId,
         ref: "Users"
-    },
+    }],
     id_frutas: {
         type: Schema.Types.ObjectId,
         ref: "Frutas"
