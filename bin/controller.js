@@ -136,17 +136,17 @@ class controller {
         });
     }
 
-    actualizarusuarioporid(usuarios, res) {
+    updateUser(user, res) {
         //optenemos los campos que queremos actualizar
-        let { id, nickname, picture, password } = usuarios;
+        let { id, picture, password } = user;
         //actualizamos teniendo en cuenta una condicion con el operador $set
         //https://docs.mongodb.com/manual/reference/operator/update/set/
         User.updateOne(
             { _id: id },
-            { $set: { nickname: nickname, picture: picture, password: password } }
+            { $set: { picture: picture, password: password } }
         )
             .then(rawResponse => {
-                res.send({ message: "Usuario actualizado", raw: rawResponse });
+                res.send({ message: "User updated", raw: rawResponse });
             })
             .catch(err => {
                 if (err) throw err;

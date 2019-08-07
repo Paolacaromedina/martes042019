@@ -93,9 +93,9 @@ app.get("/usuarios/:id_usuario/paises", function(req, res) {
 });
 
 app.put("/users/:id", function(req, res) {
-    let usuario = req.body.usuario;
-    usuario.id = req.params.id;
-    controller.actualizarusuarioporid(usuario, res);
+    let user = req.body.user;
+    user.id = req.params.id;
+    controller.updateUser(user, res);
 });
 
 app.get("/usuarios/:id_usuario/recetas/", function(req, res) {
@@ -113,6 +113,9 @@ app.get("/personas/:id_usuario/", function(req, res) {
     res.send("ok")
 });
 //rutas para comentarios
+app.get("/cometarios", (req, res) => {
+    controller.traerusuarios(res);
+})
 
 
 exports.app = app;
