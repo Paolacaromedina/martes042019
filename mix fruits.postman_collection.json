@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "bca4646f-eeec-41ae-9a2f-c4cc881527e0",
+		"name": "mix fruits",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736.ws-us0.gitpod.io/users/5d435f37a05c9706a91f748b/recetas/5d3b5e0e1c9d4400000cd678",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736.ws-us0.gitpod.io/users/5d435f37a05c9706a91f748b/recetas/5d3b5e0e1c9d4400000cd678",
+					"protocol": "https",
+					"host": [
+						"8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736",
+						"ws-us0",
+						"gitpod",
+						"io"
+					],
+					"path": [
+						"users",
+						"5d435f37a05c9706a91f748b",
+						"recetas",
+						"5d3b5e0e1c9d4400000cd678"
+					]
+				},
+				"description": "usuarios y recetas (populacion)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736.ws-us0.gitpod.io/users/5d435f37a05c9706a91f748b/recetas/5d3b5e0e1c9d4400000cd678",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736.ws-us0.gitpod.io/personas/5d3c75231c9d440000358ace/paises/5d3c8e5f1c9d440000358ad2/users/5d436460e77469033040c647",
+					"protocol": "https",
+					"host": [
+						"8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736",
+						"ws-us0",
+						"gitpod",
+						"io"
+					],
+					"path": [
+						"personas",
+						"5d3c75231c9d440000358ace",
+						"paises",
+						"5d3c8e5f1c9d440000358ad2",
+						"users",
+						"5d436460e77469033040c647"
+					]
+				},
+				"description": "usuario por pais"
+			},
+			"response": []
+		},
+		{
+			"name": "https://8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736.ws-us0.gitpod.io/users/5d435f37a05c9706a91f748b/recetas/5d3b5e0e1c9d4400000cd678",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736.ws-us0.gitpod.io/comentarios/5d4374ca935b0f11a65da7f2/recetas/5d436a24451b84087c6b0ee6",
+					"protocol": "https",
+					"host": [
+						"8080-b56a58ad-c21c-4d98-80f3-96f31d7ff736",
+						"ws-us0",
+						"gitpod",
+						"io"
+					],
+					"path": [
+						"comentarios",
+						"5d4374ca935b0f11a65da7f2",
+						"recetas",
+						"5d436a24451b84087c6b0ee6"
+					]
+				},
+				"description": "receta y comentario"
+			},
+			"response": []
+		}
+	]
+}
